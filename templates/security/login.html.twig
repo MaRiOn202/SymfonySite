@@ -4,6 +4,17 @@
 
     <div class="container">
         <h1 class="text-center">Connexion</h1>
+        <form action="" method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label">Votre email :</label>
+                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="_username">
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Mot de passe :</label>
+                <input type="password" class="form-control" id="password" name="_password">
+            </div>
+            <button type="submit" class="btn btn-primary">Se connecter</button>
+        </form>
     </div>
 
 {% endblock body %}

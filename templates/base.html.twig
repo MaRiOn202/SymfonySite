@@ -28,14 +28,20 @@
                 <div class="collapse navbar-collapse" id="navbarColor01">
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/home">Home
+                            <a class="nav-link" href="/home">Accueil
                                 <span class="visually-hidden">(current)</span>
                             </a>
                         </li>
 
                     </ul>
 
-                    <a href="{{ path('security_register') }}" class="btn btn-success">Inscription</a>
+                    {% if app.user %}
+                        <a href="{{ path('security_logout') }}" class="btn btn-success">Déconnexion</a>
+                    {% else %}
+                        <a href="{{ path('security_register') }}" class="btn btn-success m-1">Inscription</a>
+                        <a href="{{ path('security_login') }}" class="btn btn-success m-1">Connexion</a>
+                    {% endif %}
+
 
                 </div>
             </div>

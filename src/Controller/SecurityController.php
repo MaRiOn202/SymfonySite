@@ -33,7 +33,7 @@ class SecurityController extends AbstractController
             $password_hash = $hasher->hashPassword($user,$user->getPassword());
             $user->setPassword($password_hash);
             //dd($user);                                   //vérifie que ça fonctionne
-            $this->manager->persist($user);                //prépare le manger à sauvegarder les données dans user
+            $this->manager->persist($user);                //prépare le manager à sauvegarder les données dans user
             $this->manager->flush();                      //les sauvegarde
             return $this->redirectToRoute("security_login");
         };
@@ -47,7 +47,11 @@ class SecurityController extends AbstractController
 
     #[Route('/login', name: 'security_login')]
     public function login(): Response{
-
         return $this->render('security/login.html.twig');
+    }
+
+    #[Route('/logout', name: 'security_logout')]
+    public function logout(){
+
     }
 }
